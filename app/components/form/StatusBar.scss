@@ -1,0 +1,40 @@
+@media(max-width: 767px) {
+    .statusbar {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        text-align: center;
+        background-color: #EEE;
+        border-top: 1px solid #CCC;
+        border-bottom: 5px solid #18A7B5;
+        z-index: 1000;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    }
+
+        .statusbar__item {
+            display: inline-block;
+            height: auto;
+            padding: 5px;
+            background-color: #FFF;
+        }
+
+        .statusbar__img {
+            width: 100%;
+            height: auto;
+        }
+
+        .statusbar__item--complete {
+            background-color: #18A7B5;
+        }
+}
+
+@media(min-width: 768px) {
+}
+
+@media(min-width: 992px) {
+
+}
+
+@media(min-width: 1200px) {
+
+}

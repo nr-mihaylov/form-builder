@@ -1,0 +1,44 @@
+@media(max-width: 767px) {
+    .navigation {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #CCC;
+        box-shadow: 0 -2px 5px 0 rgba(0,0,0,.26)
+    }
+
+        .navigation__back {
+        }
+
+        .navigation__next {
+        }
+
+            .navigation__button {
+                font-family: 'Lato';
+                font-weight: 700;
+                float: left;
+                width: 50%;
+                border: none;
+                padding: 20px;
+                color: #FFF;
+                outline: none;
+                text-transform: uppercase;
+                background-color: #18A7B5;
+            }
+
+            .navigation__fullbutton {
+                width: 100%;
+            }
+}
+
+@media(min-width: 768px) {
+
+}
+
+@media(min-width: 992px) {
+
+}
+
+@media(min-width: 1200px) {
+
+}

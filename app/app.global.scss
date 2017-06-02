@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100i,300,300i,400,400i,700&subset=latin-ext');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+// RESET
+
+* {
+    box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato';
+    margin: 0;
+}
+
+p {
+    font-family: 'Lato';
+    font-weight: 300;
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+    height: 100vh;
+}
+
+// RESET END

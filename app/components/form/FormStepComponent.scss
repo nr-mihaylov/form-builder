@@ -1,0 +1,33 @@
+.formstep {
+
+}
+
+    .formstep__wrapper {
+        padding-top: 78px;
+        padding-bottom: 58px;
+        max-height: 100vh;
+        background-color: #EEE;
+    }
+
+    .formstep__content {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px 40px 20px;
+        overflow: auto;
+    }
+
+        .formstep__header {
+            text-align: center;
+        }
+
+        .formstep__title {
+            display: inline-block;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 5px solid #18A7B5;
+        }
+
+    .formstep__navigation {
+
+    }

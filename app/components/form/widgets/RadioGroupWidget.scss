@@ -1,0 +1,47 @@
+@media(max-width: 767px) {
+    .radiogroup {
+        margin-bottom: 20px;
+    }
+
+        .radiogroup__left {
+            padding-left: 5px;
+            margin-bottom: 15px;
+        }
+
+        .radiogroup__right {
+
+        }
+
+            .radiogroup__label {
+                display: block;
+                padding: 20px;
+                margin-bottom: 7.5px;
+                font-family: 'Lato';
+                font-weight: 700;
+                background-color: #FFF;
+                border: 1px solid #CCC;
+            }
+
+            input[type="radio"]:checked+label.radiogroup__label {
+                color: #FFF;
+                background-color: #18A7B5;
+            }
+
+            .radiogroup__input {
+                display: none;
+            }
+
+            .radiogroup__error {
+            }
+}
+
+@media(min-width: 768px) {
+}
+
+@media(min-width: 992px) {
+
+}
+
+@media(min-width: 1200px) {
+
+}
