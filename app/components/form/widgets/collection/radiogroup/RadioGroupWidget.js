@@ -17,7 +17,7 @@ class RadioGroupWidget extends React.Component {
 
 	filterOptions(options) {
 		return options.filter((option) => {
-			return this.props.ruleEval(option.visibilityRules, this.props.store).valid;
+			return this.props.ruleUtil.eval(option.visibilityRules, this.props.store);
 		});
 	}
 
@@ -55,7 +55,8 @@ class RadioGroupWidget extends React.Component {
 }
 
 export default {
-    Component: RadioGroupWidget,
+	type: 'RADIO_GROUP_WIDGET',
+    component: RadioGroupWidget,
 	extend: function() {
 		return {
 			eval: function(state) {

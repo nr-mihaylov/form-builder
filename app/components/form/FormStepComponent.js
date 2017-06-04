@@ -13,7 +13,7 @@ class FormStepComponent extends React.Component {
 		return (
 			<div className={styles.formstep}>
 				<div className={styles.formstep__wrapper}>
-					<section style={{height: window.innerHeight-140}} className={styles.formstep__content}>
+					<section style={{height: window.innerHeight-128}} className={styles.formstep__content}>
 						<header className={styles.formstep__header}>
 							<h2 className={styles.formstep__title}>{this.props.step.title}</h2>
 						</header>

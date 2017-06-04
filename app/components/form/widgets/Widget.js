@@ -1,8 +1,8 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import actions from '../actions.js';
-import widget  from './widgetAggregator.js';
-import ruleEval from '../rules/rulesAggregator.js';
+import React        from 'react';
+import { connect }  from 'react-redux';
+import actions      from '../actions.js';
+import findWidget   from './findWidget.js';
+import ruleUtil     from '../rules/ruleUtil.js';
 
 class Widget extends React.Component {
     constructor(props) {
@@ -10,11 +10,11 @@ class Widget extends React.Component {
     }
 
     render() {
-			if(this.props.field.isVisible(this.props.store).valid) {
-				var Widget = widget(this.props.field.type).Component;
+			if(this.props.field.isVisible(this.props.store)) {
+				var Widget = findWidget(this.props.field.type).component;
 				return <Widget
 					field={this.props.field}
-					ruleEval={ruleEval}
+                    ruleUtil={ruleUtil}
 					{...this.props}
 				/>;
 			} else return null;

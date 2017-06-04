@@ -49,7 +49,8 @@ class DateWidget extends React.Component {
 }
 
 export default {
-    Component: DateWidget,
+    type: 'DATE_WIDGET',
+    component: DateWidget,
 	extend: function() {
 		return {
 			eval: function(state) {

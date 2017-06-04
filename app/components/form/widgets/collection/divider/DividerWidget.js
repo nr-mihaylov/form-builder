@@ -10,7 +10,8 @@ class DividerWidget extends React.Component {
 }
 
 export default {
-    Component: DividerWidget,
+	type: 'DIVIDER_WIDGET',
+    component: DividerWidget,
 	extend: function() {
 		return {
 			eval: function(state) {

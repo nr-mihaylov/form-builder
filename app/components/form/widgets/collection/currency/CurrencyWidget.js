@@ -51,7 +51,8 @@ class CurrencyWidget extends React.Component {
 }
 
 export default {
-    Component: CurrencyWidget,
+    type: 'CURRENCY_WIDGET',
+    component: CurrencyWidget,
 	extend: function() {
 		return {
 			eval: function(state) {

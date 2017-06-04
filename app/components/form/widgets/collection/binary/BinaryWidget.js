@@ -53,7 +53,8 @@ class BinaryWidget extends React.Component {
 }
 
 export default {
-    Component: BinaryWidget,
+    type: 'BINARY_WIDGET',
+    component: BinaryWidget,
 	extend: function() {
 		return {
             eval: function(state) {

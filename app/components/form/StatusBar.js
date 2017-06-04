@@ -12,15 +12,11 @@ class StatusBar extends React.Component {
 			if(step.isVisible(this.props.store)) return step;
 		});
         return (
-            <div className={styles.statusbar}>
+            <div className={styles.container}>
                 {
                     filteredSteps.map((step, index) =>
-                        <div style={{width: 100/filteredSteps.length + "%"}} key={index} className={
-                            ((this.props.store[step.id].validationAttempt && step.isValid(this.props.store).isStepValid) ||
-                            (step.allTouched(this.props.store) && step.isValid(this.props.store).isStepValid))?
-                            styles.statusbar__item + " " + styles["statusbar__item--complete"] : styles.statusbar__item
-                        }>
-                            <img className={styles.statusbar__img} src="https://maxcdn.icons8.com/windows10/PNG/96/Business/sell_property-96.png" />
+                        <div style={{width: 100/filteredSteps.length + "%"}} key={index} className={styles.item}>
+                            <span className={styles.checkmark + " " + "ion-checkmark-circled"}></span>
                         </div>
                     )
                 }
@@ -33,15 +29,4 @@ function mapStateToProps(store) {
     return {store: store.fk}
 }
 
-export default connect(mapStateToProps)(StatusBar)
-
-// <img src="">
-
-// <i className={
-//     ((this.props.store[step.id].validationAttempt &&
-//     step.isValid(this.props.store).isStepValid) ||
-//     (step.allTouched(this.props.store) &&
-//     step.isValid(this.props.store).isStepValid))
-//     ? 'icon-cmyk-DRCheckmark' : step.icon
-// }></i>
-// <span>{step.title}</span>
+export default connect(mapStateToProps)(StatusBar);

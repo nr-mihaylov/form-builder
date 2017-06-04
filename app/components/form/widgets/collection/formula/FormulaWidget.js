@@ -1,6 +1,7 @@
 const math = require('mathjs');
 import React    from 'react';
 import Moment   from 'moment';
+import styles from './FormulaWidget.scss';
 
 class FormulaWidget extends React.Component {
     constructor(props) {
@@ -33,14 +34,12 @@ class FormulaWidget extends React.Component {
 
     render() {
         return this.props.field.hidden === true? null: (
-            <div className="formRow">
-                <div className="leftPart">
-                    <label>{this.props.field.getLabel(this.props.store)}</label>
+            <div className={styles.formula}>
+                <div className={styles.formula__left}>
+                    <p className={styles.formula__label}>{this.props.field.getLabel(this.props.store)}</p>
                 </div>
-                <div className="rightPart">
-                    <div className="resultDisplayerComponent">
-                        {this.pretty(this.props.field.eval(this.props.store))}
-                    </div>
+                <div className={styles.formula__right}>
+                    <p className={styles.formula__value}>{this.pretty(this.props.field.eval(this.props.store))}</p>
                 </div>
             </div>
         )
@@ -48,7 +47,8 @@ class FormulaWidget extends React.Component {
 }
 
 export default {
-    Component: FormulaWidget,
+    type: 'FORMULA_WIDGET',
+    component: FormulaWidget,
 	extend: function(field) {
         field.compiledFormula = breakdown(field.formula);
         field.spreadFormula = false;

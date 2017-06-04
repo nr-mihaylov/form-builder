@@ -35,7 +35,6 @@ class NavigationComponent extends React.Component {
 	}
 
 	render() {
-		console.log(this.state);
 		return (
 			<div className={styles.navigation}>
 				<div className={styles.navigation__back}>
