@@ -1,20 +1,14 @@
 .formstep {
-
 }
 
-    .formstep__wrapper {
-        padding-top: 70px;
-        padding-bottom: 58px;
-        max-height: 100vh;
-        background-color: #EEE;
-    }
-
     .formstep__content {
+        position: fixed;
+        top: 70px;
+        bottom: 58px;
         width: 100%;
-        max-width: 900px;
-        margin: 0 auto;
         padding: 60px 20px 40px 20px;
         overflow: auto;
+        background-color: #EEE;
     }
 
         .formstep__header {
@@ -31,3 +25,12 @@
     .formstep__navigation {
 
     }
+
+@media(max-width: 767px) {}
+@media(min-width: 768px) {
+    .formstep__content {
+        bottom: 101px;
+    }
+}
+@media(min-width: 992px) {}
+@media(min-width: 1200px) {}

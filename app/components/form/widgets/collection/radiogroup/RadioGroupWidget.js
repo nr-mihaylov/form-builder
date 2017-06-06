@@ -23,16 +23,16 @@ class RadioGroupWidget extends React.Component {
 
 	render() {
 		return (
-			<div className={styles.radiogroup}>
-				<div className={styles.radiogroup__left}>
+			<div className={styles.radiogroup + " widget"}>
+				<div className={styles.radiogroup__left + " widget__left"}>
                     <p>{this.props.field.label}</p>
 				</div>
-				<div className={styles.radiogroup__right}>
+				<div className={styles.radiogroup__right + " widget__right"}>
 					<div>
 					{
 						this.filterOptions(this.props.field.options).map((option, index) => {
 							return (
-								<div key={index}>
+								<div className={styles.radiogroup__option} key={index}>
 									<input
 										className={styles.radiogroup__input}
 										id={this.props.field.id+option.value}
@@ -48,7 +48,7 @@ class RadioGroupWidget extends React.Component {
 					}
 					</div>
 				</div>
-                <p className={styles.radiogroup__error}>{this.props.fieldState.msg}</p>
+                <p className={"widget__error"}>{this.props.fieldState.msg}</p>
 			</div>
 		)
 	}
@@ -60,7 +60,7 @@ export default {
 	extend: function() {
 		return {
 			eval: function(state) {
-				return this.isVisible(state).valid === true? state[this.stepId][this.id].value: 0;
+				return this.isVisible(state)? state[this.stepId][this.id].value: 0;
 			},
             isTouchable: true
 		}

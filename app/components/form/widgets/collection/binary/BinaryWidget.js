@@ -18,11 +18,11 @@ class BinaryWidget extends React.Component {
 
     render() {
         return (
-            <div className={styles.binary}>
-                <div className={styles.binary__left}>
+            <div className={styles.binary + " widget"}>
+                <div className={"widget__left"}>
                     <p>{this.props.field.label}</p>
                 </div>
-                <div className={styles.binary__right}>
+                <div className={"widget__right"}>
                     <div className={styles.binaryinput}>
                         <div className={styles.binaryinput__positive}>
                             <input
@@ -46,7 +46,7 @@ class BinaryWidget extends React.Component {
                         </div>
                     </div>
                 </div>
-                <p className={styles.binary__error}>{this.props.fieldState.msg}</p>
+                <p className={"widget__error"}>{this.props.fieldState.msg}</p>
             </div>
         )
     }
@@ -58,7 +58,7 @@ export default {
 	extend: function() {
 		return {
             eval: function(state) {
-                return this.isVisible(state).valid === true? state[this.stepId][this.id].value: 0;
+                return this.isVisible(state) === true? state[this.stepId][this.id].value: 0;
 			},
             isTouchable: true
 		}

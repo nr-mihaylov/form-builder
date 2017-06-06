@@ -11,7 +11,7 @@ function Step(stepCfg) {
             if(
                 field.isTouchable &&
                 !state[this.id][field.id].isTouched &&
-                field.isVisible(state).valid
+                field.isVisible(state)
             ) acc = false;
             return acc;
         }, true);
@@ -25,7 +25,7 @@ function Step(stepCfg) {
                 fieldState: _.assign(
                     {},
                     fieldState,
-                    field.isVisible(state).valid? field.isValid(state) : {valid: true, msg: null}
+                    field.isVisible(state)? field.isValid(state) : {valid: true, msg: null}
                 )
             };
         });

@@ -24,27 +24,25 @@ class CurrencyWidget extends React.Component {
 
     render() {
 			return (
-				<div className={styles.currency}>
-					<div className={styles.currency__left}>
+				<div className={styles.currency + " widget"}>
+					<div className={"widget__left"}>
 						<p>{this.props.field.label}</p>
 					</div>
-					<div className={styles.currency__right}>
-						<div>
-							<DynamicNumber
-                                className={styles.currency__input}
-								value={this.props.fieldState.value === null? '' : this.props.fieldState.value}
-								integer={64}
-								separator={','}
-								thousand={true}
-								fraction={2}
-								positive={true}
-								negative={true}
-								onChange={this.handleChange}
-                                onFocus={this.handleFocus}
-							/>
-						</div>
-                        <p className={styles.currency__error}>{this.props.fieldState.msg}</p>
+					<div className={"widget__right"}>
+						<DynamicNumber
+                            className={styles.currency__input}
+							value={this.props.fieldState.value === null? '' : this.props.fieldState.value}
+							integer={64}
+							separator={','}
+							thousand={true}
+							fraction={2}
+							positive={true}
+							negative={true}
+							onChange={this.handleChange}
+                            onFocus={this.handleFocus}
+						/>
 					</div>
+                    <p className={"widget__error"}>{this.props.fieldState.msg}</p>
 				</div>
 			)
     }
@@ -56,7 +54,7 @@ export default {
 	extend: function() {
 		return {
 			eval: function(state) {
-                return this.isVisible(state).valid === true? state[this.stepId][this.id].value: 0;
+                return this.isVisible(state) === true? state[this.stepId][this.id].value: 0;
 			},
             isTouchable: true
 		}

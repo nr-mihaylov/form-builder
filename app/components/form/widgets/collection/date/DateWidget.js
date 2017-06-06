@@ -23,11 +23,11 @@ class DateWidget extends React.Component {
 
     render() {
         return (
-            <div className={styles.date}>
-                <div className={styles.date__left}>
+            <div className={styles.date + " widget"}>
+                <div className={"widget__left"}>
                     <p>{this.props.field.label}</p>
                 </div>
-                <div className={styles.date__right}>
+                <div className={"widget__right"}>
                     <div className={styles.date__wrapper}>
                         <ReactDatePicker
                             className={styles.date__input}
@@ -42,7 +42,7 @@ class DateWidget extends React.Component {
                         <i className="icon-CalendarIcon"></i>
                     </div>
                 </div>
-                <p className={styles.date__error}>{this.props.fieldState.msg}</p>
+                <p className={"widget__error"}>{this.props.fieldState.msg}</p>
             </div>
         )
     }
@@ -54,7 +54,7 @@ export default {
 	extend: function() {
 		return {
 			eval: function(state) {
-                return this.isVisible(state).valid === true? state[this.stepId][this.id].value: 0;
+                return this.isVisible(state) === true? state[this.stepId][this.id].value: 0;
 			},
             isTouchable: true
 		}

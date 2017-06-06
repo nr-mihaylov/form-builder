@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
     font-family: 'Lato';
-    font-weight: 300;
+    font-weight: 400;
     margin: 0;
 }
 
@@ -24,3 +24,47 @@ body {
 }
 
 // RESET END
+
+@media(max-width: 767px) {
+    .widget {
+        margin-bottom: 30px;
+        margin: 0 auto 20px;
+    }
+
+        .widget__left {
+            margin-bottom: 10px;
+        }
+
+        .widget__right {
+
+        }
+}
+@media(min-width: 768px) {
+    .widget {
+        max-width: 800px;
+        margin: 0 auto 20px;
+        &::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+
+        .widget__left {
+            float: left;
+            width: 50%;
+        }
+
+        .widget__right {
+            float: left;
+            width: 50%;
+            text-align: right;
+        }
+
+        .widget__error {
+            margin-top: 5px;
+            color: #CC0000;
+        }
+}
+@media(min-width: 992px) {}
+@media(min-width: 1200px) {}

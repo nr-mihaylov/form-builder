@@ -16,7 +16,22 @@ class StatusBar extends React.Component {
                 {
                     filteredSteps.map((step, index) =>
                         <div style={{width: 100/filteredSteps.length + "%"}} key={index} className={styles.item}>
-                            <span className={styles.checkmark + " " + "ion-checkmark-circled"}></span>
+                            <span className={
+                                styles.checkmark + " " +
+                                (
+                                    (
+                                        step.isValid(this.props.store).isStepValid &&
+                                        this.props.store[step.id].isVisited && 
+                                        (
+                                            this.props.store[step.id].validationAttempt ||
+                                            step.allTouched(this.props.store)
+                                        )
+                                    )?
+                                    "ion-checkmark-circled" + " " + styles["checkmark--complete"] : "ion-close-circled"
+                                ) + (
+                                    this.props.store.currentRoute === step.currentStep? " " + styles["checkmark--current"] : ""
+                                )
+                            }></span>
                         </div>
                     )
                 }

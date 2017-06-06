@@ -1,33 +1,15 @@
-@media(max-width: 767px) {
-    .label {
-        margin-bottom: 20px;
+.label {
+}
+
+    .label__text {
+
     }
 
-        .label__left {
-            padding-left: 5px;
-            margin-bottom: 5px;
-        }
+    .label__value {
 
-            .label__text {
+    }
 
-            }
-
-        .label__right {
-            padding-left: 5px;
-        }
-
-            .label__value {
-
-            }
-}
-
-@media(min-width: 768px) {
-}
-
-@media(min-width: 992px) {
-
-}
-
-@media(min-width: 1200px) {
-
-}
+@media(max-width: 767px) {}
+@media(min-width: 768px) {}
+@media(min-width: 992px) {}
+@media(min-width: 1200px) {}

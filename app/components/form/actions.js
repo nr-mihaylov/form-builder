@@ -2,7 +2,7 @@ export default function(dispatcher) {
     return {
         updateField(field, fieldProps) {
             dispatcher({
-                type: 'FK_UPDATE_FIELD',
+                type: 'UPDATE_FIELD',
                 payload: {
                     field: field,
                     fieldProps: fieldProps
@@ -11,7 +11,7 @@ export default function(dispatcher) {
         },
         touchField(field, fieldProps) {
             dispatcher({
-                type: 'FK_TOUCH_FIELD',
+                type: 'TOUCH_FIELD',
                 payload: {
                     field: field,
                     fieldProps: fieldProps
@@ -20,10 +20,27 @@ export default function(dispatcher) {
         },
         validateStep(step, validation) {
             dispatcher({
-                type: 'FK_VALIDATE_STEP',
+                type: 'VALIDATE_STEP',
                 payload: {
                     step: step,
                     validation: validation
+                }
+            });
+        },
+        changeRoute(step, newRoute) {
+            dispatcher({
+                type: 'CHANGE_STEP',
+                payload: {
+                    step: step,
+                    newRoute: newRoute
+                }
+            });
+        },
+        visitStep(step) {
+            dispatcher({
+                type: 'VISIT_STEP',
+                payload: {
+                    step: step
                 }
             });
         }

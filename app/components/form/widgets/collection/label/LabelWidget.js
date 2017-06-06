@@ -40,11 +40,11 @@ class LabelWidgetComponent extends React.Component {
 
     styleOption(option) {
         return (
-            <div className={styles.label}>
-                <div className={styles.label__left}>
+            <div className={styles.label + " widget"}>
+                <div className={"widget__left"}>
                     <p className={styles.label__text}>{this.props.field.label}</p>
                 </div>
-                <div className={styles.label__right}>
+                <div className={"widget__right"}>
                     {this.props.field.defaultValue && <p className={styles.label__value}>{this.pretty(this.props.field.defaultValue)}</p>}
                 </div>
             </div>

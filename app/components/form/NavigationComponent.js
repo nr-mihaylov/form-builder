@@ -23,13 +23,17 @@ class NavigationComponent extends React.Component {
 	}
 
 	onPrevious() {
-		if(this.state.prev) hashHistory.push('/' + this.props.appRoute + '/' + this.state.prev);
+		if(this.state.prev) {
+			this.props.actions.changeRoute(this.props.step, this.state.prev);
+			hashHistory.push('/' + this.props.appRoute + '/' + this.state.prev);
+		}
 	}
 
 	onNext() {
 		var validation = this.props.step.isValid(this.props.store);
 		this.props.actions.validateStep(this.props.step, validation);
 		if(validation.isStepValid) {
+			this.props.actions.changeRoute(this.props.step, this.state.next);
 			if(this.state.next) hashHistory.push('/' + this.props.appRoute + '/' + this.state.next);
 		}
 	}
@@ -37,12 +41,8 @@ class NavigationComponent extends React.Component {
 	render() {
 		return (
 			<div className={styles.navigation}>
-				<div className={styles.navigation__back}>
-					{this.state.prev && <button className={styles.navigation__button} onClick={this.onPrevious}>Tilbage</button>}
-				</div>
-				<div className={styles.navigation__next}>
-					{this.state.next && <button className={styles.navigation__button + (this.state.prev? '' : ' ' + styles.navigation__fullbutton)} onClick={this.onNext}>Næste</button>}
-				</div>
+				{this.state.prev && <button className={styles.navigation__button + (this.state.next? '' : ' ' + styles.navigation__fullbutton)} onClick={this.onPrevious}>Tilbage</button>}
+				{this.state.next && <button className={styles.navigation__button + (this.state.prev? '' : ' ' + styles.navigation__fullbutton)} onClick={this.onNext}>Næste</button>}
 			</div>
 		)
 	}

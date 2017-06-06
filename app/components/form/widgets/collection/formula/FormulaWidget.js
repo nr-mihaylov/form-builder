@@ -34,11 +34,11 @@ class FormulaWidget extends React.Component {
 
     render() {
         return this.props.field.hidden === true? null: (
-            <div className={styles.formula}>
-                <div className={styles.formula__left}>
+            <div className={styles.formula + " widget"}>
+                <div className={"widget__left"}>
                     <p className={styles.formula__label}>{this.props.field.getLabel(this.props.store)}</p>
                 </div>
-                <div className={styles.formula__right}>
+                <div className={"widget__right"}>
                     <p className={styles.formula__value}>{this.pretty(this.props.field.eval(this.props.store))}</p>
                 </div>
             </div>
@@ -110,7 +110,7 @@ export default {
                 if(!equalityCheck || this.cachedValue === undefined) {
                     this.cachedValue = math.eval(compute(this.compiledFormula, this.cache, state));
                 }
-                return this.isVisible(state).valid === true? this.cachedValue: 0;
+                return this.isVisible(state) === true? this.cachedValue: 0;
 			},
             isTouchable: false
 		}

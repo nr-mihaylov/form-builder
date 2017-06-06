@@ -1,38 +1,22 @@
-@media(max-width: 767px) {
-    .currency {
-        margin-bottom: 20px;
+.currency {
+}
+
+    .currency__input {
+        width: 100%;
+        max-width: 250px;
+        display: block;
+        padding: 7.5px;
+        border: 1px solid #CCC;
+        outline-color: #18A7B5;
+        text-align: right;
+        border-radius: 5px;
     }
 
-        .currency__left {
-            padding-left: 5px;
-            margin-bottom: 5px;
-        }
-
-        .currency__right {
-
-        }
-
-            .currency__input {
-                width: 100%;
-                display: block;
-                padding: 7.5px;
-                border: 1px solid #CCC;
-                outline-color: #18A7B5;
-            }
-
-            .currency__error {
-                margin-top: 5px;
-                color: #CC0000;
-            }
-}
-
+@media(max-width: 767px) {}
 @media(min-width: 768px) {
+    .currency__input {
+        display: inline-block;
+    }
 }
-
-@media(min-width: 992px) {
-
-}
-
-@media(min-width: 1200px) {
-
-}
+@media(min-width: 992px) {}
+@media(min-width: 1200px) {}

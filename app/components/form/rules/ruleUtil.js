@@ -2,8 +2,8 @@ import findRule from './findRule.js';
 
 function rulesEval(rules, state) {
     return rules && rules.length>0? rules.find((rule) => {
-        var evalFunc = findRule(rule.type);
-        if(!evalFunc(rule, state)) return rule;
+        var ruleFunc = findRule(rule.type);
+        return ruleFunc(rule, state) === false;
     }) : undefined;
 }
 
@@ -13,7 +13,6 @@ export default {
     },
     evalWithMessage: function(rules, state) {
         var rulesEvalResult = rulesEval(rules, state);
-        console.log(rulesEvalResult);
         return rulesEvalResult === undefined? {
             valid: true,
             msg: null

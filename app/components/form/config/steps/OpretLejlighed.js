@@ -64,6 +64,7 @@ const cfg = {
             label: 'Forbedringer af lejlighed frem til 31.12.15',
             type: 'CURRENCY_WIDGET',
             defaultValue: null,
+            visibilityRules: [],
             validationRules: []
         },
         {

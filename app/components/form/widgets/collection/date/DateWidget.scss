@@ -1,43 +1,28 @@
-@media(max-width: 767px) {
 .date {
-    margin-bottom: 20px;
 }
 
-    .date__left {
-        padding-left: 5px;
-        margin-bottom: 5px;
-    }
-
-    .date__right {
-    }
-
-        .date__wrapper {
-            & > div {
-                display: block;
-            }
-        }
-
-        .date__input {
-            width: 100%;
+    .date__wrapper {
+        & > div {
             display: block;
-            padding: 7.5px;
-            border: 1px solid #CCC;
-            outline-color: #18A7B5;
         }
+    }
 
-        .date__error {
-            margin-top: 5px;
-            color: #CC0000;
-        }
-}
+    .date__input {
+        width: 100%;
+        width: 250px;
+        display: block;
+        padding: 7.5px;
+        border: 1px solid #CCC;
+        outline-color: #18A7B5;
+        text-align: right;
+        border-radius: 5px;
+    }
 
+@media(max-width: 767px) {}
 @media(min-width: 768px) {
+    .date__wrapper {
+        display: inline-block;
+    }
 }
-
-@media(min-width: 992px) {
-
-}
-
-@media(min-width: 1200px) {
-
-}
+@media(min-width: 992px) {}
+@media(min-width: 1200px) {}

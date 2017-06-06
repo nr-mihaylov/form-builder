@@ -1,70 +1,54 @@
-@media(max-width: 767px) {
-    .binary {
-        margin-bottom: 20px;
-    }
+.binary {
 
-        .binary__left {
-            padding-left: 5px;
-            margin-bottom: 5px;
-        }
+}
 
-        .binary__right {
-
-        }
-
-            .binary__input {
-
-            }
-
-            .binary__error {
-                margin-top: 5px;
-                color: #CC0000;
-            }
-
-
-    .binaryinput {
+    .binary__input {
 
     }
 
-        .binaryinput__positive, .binaryinput__negative {
+    .binaryinput__positive, .binaryinput__negative {
+        display: inline-block;
+        input {
+            display: none;
+        }
+        label {
             display: inline-block;
-            input {
-                display: none;
-            }
-            label {
-                display: inline-block;
-                width: 100px;
-                padding: 10px;
-                cursor: pointer;
-                background-color: #FFF;
-                font-family: 'Lato';
-                font-weight: 700;
-            }
-            border: 1px solid #CCC;
-            text-align: center;
+            width: 100px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: #FFF;
+            font-family: 'Lato';
+            font-weight: 700;
         }
+        border: 1px solid #CCC;
+        text-align: center;
+    }
 
-        input[type="radio"]:checked+label {
-            color: #FFF;
-            background-color: #18A7B5;
+    input[type="radio"]:checked+label {
+        color: #FFF;
+        background-color: #18A7B5;
+    }
+
+    .binaryinput__positive {
+        border-right: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        label {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
         }
+    }
 
-        .binaryinput__positive {
-            border-right: none;
+    .binaryinput__negative {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        label {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
+    }
 
-        .binaryinput__negative {
-
-        }
-}
-
-@media(min-width: 768px) {
-}
-
-@media(min-width: 992px) {
-
-}
-
-@media(min-width: 1200px) {
-
-}
+@media(max-width: 767px) {}
+@media(min-width: 768px) {}
+@media(min-width: 992px) {}
+@media(min-width: 1200px) {}
