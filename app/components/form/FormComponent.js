@@ -12,7 +12,10 @@ class FormComponent extends React.Component {
 		return (
 			<div className={styles.form}>
 				<div className={styles.form__statusbar}>
-					<StatusBar steps={this.props.config.steps}/>
+					<StatusBar
+						steps={this.props.config.steps}
+						formId={this.props.config.id}
+					/>
 				</div>
 				<div className={styles.form__steps}>
 					{this.props.children}

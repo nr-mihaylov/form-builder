@@ -10,8 +10,9 @@ function tag(strings, ...values) {
 }
 
 const cfg = {
+    id: 'dr',
     currentRoute: 'OpretLejlighed',
-    appRoute: 'fk',
+    appRoute: 'dr',
     steps: [
         require('./steps/OpretLejlighed.js'),
         require('./steps/VaelgSkatteordning.js'),

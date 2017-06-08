@@ -7,6 +7,6 @@ import createForm from './components/form/util/createForm';
 export default (
     <Route path="/" component={App}>
         <IndexRedirect to="/fk"/>
-        {createForm(require('./components/form/config/configApp.js'))}
+        {createForm(require('./form-config/fk/config.js'), 'dr')}
     </Route>
 );

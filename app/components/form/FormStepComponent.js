@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import Widget  from './widgets/Widget.js';
 import Navigation from './NavigationComponent.js';
-import actions from './actions.js';
 import styles from './FormStepComponent.scss';
 
 class FormStepComponent extends React.Component {
@@ -11,7 +10,7 @@ class FormStepComponent extends React.Component {
 		super(props);
 	}
 	componentDidMount() {
-		console.log(this.props.actions.visitStep(this.props.step));
+		this.props.actions.visitStep(this.props.step);
 	}
 	render() {
 		return (
@@ -22,20 +21,30 @@ class FormStepComponent extends React.Component {
 					</header>
 					{
 						this.props.step.fields.map((field) => {
-							return <Widget key={field.id} field={field} />;
+							return <Widget
+										key={field.id}
+										field={field}
+										formId={this.props.formId}
+										createDispatcher={this.props.createDispatcher}
+									/>;
 						})
 					}
 				</section>
 				<div className={styles.formstep__navigation}>
-					<Navigation step={this.props.step} appRoute={this.props.appRoute}/>
+					<Navigation
+						step={this.props.step}
+						appRoute={this.props.appRoute}
+						formId={this.props.formId}
+						createDispatcher={this.props.createDispatcher}
+					/>
 				</div>
 			</div>
 		)
 	}
 }
 
-function mapDispatchToProps(dispatch) {
-    return {actions: actions(dispatch)}
+function mapDispatchToProps(dispatch, ownProps) {
+    return {actions: ownProps.createDispatcher(dispatch)}
 }
 
 export default withRouter(connect(null, mapDispatchToProps)(FormStepComponent));

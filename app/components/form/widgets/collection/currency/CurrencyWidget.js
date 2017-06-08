@@ -54,6 +54,8 @@ export default {
 	extend: function() {
 		return {
 			eval: function(state) {
+                console.log(this);
+                console.log(state);
                 return this.isVisible(state) === true? state[this.stepId][this.id].value: 0;
 			},
             isTouchable: true

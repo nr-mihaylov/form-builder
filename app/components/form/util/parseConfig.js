@@ -3,6 +3,7 @@ import Field from '../elements/Field.js';
 
 export default function(config) {
     var parseConfig = {
+        id: config.id,
         appRoute: config.appRoute,
         currentRoute: config.currentRoute,
         steps: []

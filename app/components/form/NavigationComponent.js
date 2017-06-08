@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { hashHistory } from 'react-router';
-import actions from './actions.js';
 import styles from './NavigationComponent.scss';
 
 class NavigationComponent extends React.Component {
@@ -49,11 +48,11 @@ class NavigationComponent extends React.Component {
 }
 
 function mapStateToProps(store, ownProps) {
-    return {store: store.fk}
+    return {store: store['forms'][ownProps.formId]}
 }
 
-function mapDispatchToProps(dispatch) {
-    return {actions: actions(dispatch)}
+function mapDispatchToProps(dispatch, ownProps) {
+    return {actions: ownProps.createDispatcher(dispatch)}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavigationComponent);

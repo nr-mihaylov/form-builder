@@ -6,6 +6,7 @@ import styles       from './StatusBar.scss';
 class StatusBar extends React.Component {
     constructor(props) {
         super(props);
+        console.log(this.props);
     }
     render() {
 		var filteredSteps = this.props.steps.filter((step) => {
@@ -21,7 +22,7 @@ class StatusBar extends React.Component {
                                 (
                                     (
                                         step.isValid(this.props.store).isStepValid &&
-                                        this.props.store[step.id].isVisited && 
+                                        this.props.store[step.id].isVisited &&
                                         (
                                             this.props.store[step.id].validationAttempt ||
                                             step.allTouched(this.props.store)
@@ -40,8 +41,8 @@ class StatusBar extends React.Component {
     }
 }
 
-function mapStateToProps(store) {
-    return {store: store.fk}
+function mapStateToProps(store, ownProps) {
+    return {store: store['forms'][ownProps.formId]}
 }
 
 export default connect(mapStateToProps)(StatusBar);
