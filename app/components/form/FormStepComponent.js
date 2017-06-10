@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import Widget  from './widgets/Widget.js';
-import Navigation from './NavigationComponent.js';
+import Navigation from './containers/NavigationContainer.js';
 import styles from './FormStepComponent.scss';
 
 class FormStepComponent extends React.Component {

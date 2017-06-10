@@ -51,6 +51,5 @@ export default function(config) {
             }
         });
     }
-    console.log(parseConfig);
     return parseConfig;
 }

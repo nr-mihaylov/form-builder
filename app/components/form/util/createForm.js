@@ -6,7 +6,6 @@ import parseConfig				from './parseConfig.js';
 import actionsInit				from '../actions.js';
 
 export default function(cfg) {
-	console.log(cfg);
 	var createDispatcher = actionsInit(cfg);
 	var config = parseConfig(cfg);
 	return (

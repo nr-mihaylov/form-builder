@@ -20,7 +20,7 @@ const cfg = {
     fields: [
         {
             id: 'F1',
-            label: 'Hvornår er lejligheden købt? (dd/mm/åååå)',
+            label: 'Hvornår er lejligheden købt? (dd/mm/åååå) @@@@',
             type: 'DATE_WIDGET',
             defaultValue: 1481670000000,
             maxDate: 1483225100000,

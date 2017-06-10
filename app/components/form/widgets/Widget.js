@@ -7,7 +7,6 @@ class Widget extends React.Component {
     constructor(props) {
         super(props);
     }
-
     render() {
 		if(this.props.field.isVisible(this.props.store)) {
 			var Widget = findWidget(this.props.field.type).component;

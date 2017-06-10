@@ -6,7 +6,6 @@ import styles       from './StatusBar.scss';
 class StatusBar extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props);
     }
     render() {
 		var filteredSteps = this.props.steps.filter((step) => {
