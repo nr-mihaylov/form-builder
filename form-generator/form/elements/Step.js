@@ -1,5 +1,5 @@
 const _ = require('lodash');
-import ruleUtil from '../rules/ruleUtil.js';
+import validateRules from '../rules/validateRules.js';
 
 export default (step) => new Step(step);
 
@@ -39,12 +39,12 @@ function Step(stepCfg) {
         }
     }
     this.isVisible = function(state) {
-        return ruleUtil.eval(this.visibilityRules, state);
+        return validateRules.eval(this.visibilityRules, state);
     }
     this.getNextStep = function(state) {
         if(this.nextStepAlternate && this.nextStepAlternate.length>0) {
             var result = this.nextStepAlternate.find((alt) => {
-                if(ruleUtil.eval(alt.conditions, state)) return alt.nextStep;
+                if(validateRules.eval(alt.conditions, state)) return alt.nextStep;
             });
             return result === undefined? this.nextStep : result.nextStep;
         } else {
@@ -54,7 +54,7 @@ function Step(stepCfg) {
     this.getPrevStep = function(state) {
         if(this.prevStepAlternate && this.prevStepAlternate.length>0) {
             var result = this.prevStepAlternate.find((alt) => {
-                if(ruleUtil.eval(alt.conditions, state)) return alt.prevStep;
+                if(validateRules.eval(alt.conditions, state)) return alt.prevStep;
             });
             return result === undefined? this.prevStep : result.prevStep;
         } else {

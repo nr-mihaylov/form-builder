@@ -4,7 +4,6 @@ import styles from './NavigationComponent.scss';
 class NavigationComponent extends React.Component {
 	constructor(props) {
 		super(props);
-		console.log(this.props);
 	}
 
 	render() {

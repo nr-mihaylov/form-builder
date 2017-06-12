@@ -1,9 +1,9 @@
 import React        from 'react';
 import { connect }  from 'react-redux';
 import { Link }     from 'react-router';
-import styles       from './StatusBar.scss';
+import styles       from './StatusbarComponent.scss';
 
-class StatusBar extends React.Component {
+class StatusbarComponent extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -44,4 +44,4 @@ function mapStateToProps(store, ownProps) {
     return {store: store['forms'][ownProps.formId]}
 }
 
-export default connect(mapStateToProps)(StatusBar);
+export default connect(mapStateToProps)(StatusbarComponent);

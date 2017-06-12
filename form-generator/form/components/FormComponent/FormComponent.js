@@ -1,7 +1,5 @@
-/* global PLANID */
-
 import React from 'react';
-import StatusBar from './StatusBar.js';
+import StatusbarComponent from '../StatusbarComponent/StatusbarComponent.js';
 import styles from './FormComponent.scss';
 
 class FormComponent extends React.Component {
@@ -11,10 +9,10 @@ class FormComponent extends React.Component {
 	render() {
 		return (
 			<div className={styles.form}>
-				<div className={styles.form__statusbar}>
-					<StatusBar
+				<div className={styles.form__StatusbarComponent}>
+					<StatusbarComponent
 						steps={this.props.config.steps}
-						formId={this.props.config.id}
+						formId={this.props.formId}
 					/>
 				</div>
 				<div className={styles.form__steps}>

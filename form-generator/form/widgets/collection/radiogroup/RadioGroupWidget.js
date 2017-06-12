@@ -17,7 +17,7 @@ class RadioGroupWidget extends React.Component {
 
 	filterOptions(options) {
 		return options.filter((option) => {
-			return this.props.ruleUtil.eval(option.visibilityRules, this.props.store);
+			return this.props.validateRules.eval(option.visibilityRules, this.props.store);
 		});
 	}
 

@@ -1,15 +1,24 @@
 import React 					from 'react';
 import { Route, IndexRedirect }	from 'react-router';
-import FormComponent 			from '../FormComponent.js';
-import FormStepComponent 		from '../FormStepComponent.js';
+import FormContainer 			from './containers/FormContainer.js';
+import FormStepComponent 		from './components/FormStepComponent/FormStepComponent.js';
 import parseConfig				from './parseConfig.js';
-import actionsInit				from '../actions.js';
+import formActions				from './actions/formActions.js';
 
 export default function(cfg) {
-	var createDispatcher = actionsInit(cfg);
+	var createDispatcher = formActions(cfg);
 	var config = parseConfig(cfg);
 	return (
-		<Route path={config.appRoute} component={(props) => <FormComponent {...props} config={config} createDispatcher={createDispatcher} />}>
+		<Route path={config.appRoute} component={(props) => {
+					return <FormContainer
+						{...props}
+						plainConfig={cfg}
+						config={config}
+						formId={config.id}
+						createDispatcher={createDispatcher}
+					/>
+				}
+			}>
 			<IndexRedirect to={config.currentRoute} />
 			{
 				config.steps.map((step) => {

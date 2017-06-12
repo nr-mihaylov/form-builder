@@ -1,31 +1,23 @@
 var _ = require('lodash');
-var context = require.context('../form-config', true, /config\.js$/);
 
-var initialState = {};
-
-context.keys().forEach(function(path) {
-	var plainFormConfig = context(path);
-	var formState = getInitState(plainFormConfig);
-    initialState[plainFormConfig.id] = formState;
-});
 
 function getInitState(config) {
-	var formState = {
+	var defaultState = {
 		currentRoute: config.currentRoute
 	};
 	config.steps.map((step) => {
-		formState[step.id] = {};
+		defaultState[step.id] = {};
 		step.fields.map((field) => {
-			formState[step.id][field.id] = {
+			defaultState[step.id][field.id] = {
 				value: field.defaultValue
 			}
 		});
 	});
-	return formState;
+	return defaultState;
 }
 
 export default function(
-	state = initialState,
+	state = {},
 	action
 ){
 	var payload = action.payload;
@@ -59,7 +51,13 @@ export default function(
 			newState[payload.formId][payload.step.id].isVisited = true;
 			return newState;
 
-        default:
+		case 'INIT_FORM':
+			var newState = _.merge({}, state);
+			if(newState[payload.formCfg.formId] === undefined)
+				newState[payload.formCfg.id] = getInitState(payload.formCfg);
+			return newState;
+
+		default:
 			return state;
 	}
 }

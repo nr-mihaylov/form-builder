@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { hashHistory } from 'react-router';
-import Navigation from '../NavigationComponent.js';
+import Navigation from '../components/NavigationComponent/NavigationComponent.js';
 
 class NavigationContainer extends React.Component {
 	constructor(props) {

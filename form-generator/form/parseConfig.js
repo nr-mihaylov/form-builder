@@ -1,5 +1,5 @@
-import Step from '../elements/Step.js';
-import Field from '../elements/Field.js';
+import Step from './elements/Step.js';
+import Field from './elements/Field.js';
 
 export default function(config) {
     var parseConfig = {

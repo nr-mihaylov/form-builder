@@ -1,7 +1,7 @@
 import React        from 'react';
 import { connect }  from 'react-redux';
 import findWidget   from './findWidget.js';
-import ruleUtil     from '../rules/ruleUtil.js';
+import validateRules from '../rules/validateRules.js';
 
 class Widget extends React.Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class Widget extends React.Component {
 			var Widget = findWidget(this.props.field.type).component;
 			return <Widget
 				field={this.props.field}
-                ruleUtil={ruleUtil}
+                validateRules={validateRules}
 				{...this.props}
 			/>;
 		} else return null;

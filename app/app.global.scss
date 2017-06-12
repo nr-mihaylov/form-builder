@@ -38,6 +38,11 @@ body {
         .widget__right {
 
         }
+        
+        .widget__error {
+            margin-top: 5px;
+            color: #CC0000;
+        }
 }
 @media(min-width: 768px) {
     .widget {

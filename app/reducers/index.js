@@ -1,7 +1,7 @@
 // @flow
 import { combineReducers } from 'redux';
 import { routerReducer as routing } from 'react-router-redux';
-import formReducer from './formReducer';
+import { formReducer } from '../../form-generator/index.js';
 
 const rootReducer = combineReducers({
   forms: formReducer,

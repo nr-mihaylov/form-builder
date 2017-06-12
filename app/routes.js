@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, IndexRedirect } from 'react-router';
 import App from './containers/App';
 import AppIndex from './components/Index';
-import createForm from './components/form/util/createForm';
+import { createForm } from '../form-generator/index.js';
 
 export default (
     <Route path="/" component={App}>

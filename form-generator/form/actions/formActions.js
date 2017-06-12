@@ -2,6 +2,14 @@ export default function(plainConfig) {
     var cfg = plainConfig;
     return function(dispatcher) {
         return {
+            initializeForm(cfg) {
+                dispatcher({
+                    type: 'INIT_FORM',
+                    payload: {
+                        formCfg: cfg
+                    }
+                });
+            },
             updateField(field, fieldProps) {
                 dispatcher({
                     type: 'UPDATE_FIELD',
