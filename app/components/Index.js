@@ -8,10 +8,14 @@ class Index extends React.Component {
 
   render() {
     return (
-      <div>
-        <Link to="/fk" >One</Link>
-        <Link to="dr" >Two</Link>
-      </div>
+        <div>
+            <div className={"app__container"}>
+                <div className={"app__content"}>
+                    <Link className={"app__form"} to="/fk" >Forældrekøb</Link>
+                    <Link className={"app__form"} to="/budget" >Budget</Link>
+                </div>
+            </div>
+        </div>
     );
   }
 }
