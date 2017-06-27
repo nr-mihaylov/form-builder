@@ -9,7 +9,6 @@ export default (
     <Route path="/" component={App}>
         <IndexRedirect to="/index"/>
         <Route path="index" component={AppIndex} />
-        {createForm(require('./form-config/fk/config.js'))}
         {createForm(require('./form-config/budget/config.js'))}
     </Route>
 );
